@@ -1,0 +1,21 @@
+#+Title: Timestamp Identifiers for AT Protocol
+
+This is a direct port from [[https://github.com/mary-ext][mary-ext (Mary)]]: [[https://github.com/mary-ext/pkg-atproto-tid][mary-ext/pkg-atproto-tid]].
+Check out her amazing BlueSky client [[https://skeetdeck.pages.dev/][Skeetdeck]]!
+
+
+* What's a TID?
+  AT Proto's "timestamp identifiers" are used to create record keys—also known as an `rkey`. Learn more from the docs: [[https://atproto.com/specs/record-key][Record Key | AT Protocol]].
+
+
+* Create and Parse AT Proto TIDs
+#+begin_src clojure
+  (create 1709512159544000 24)
+  ;; => "3kmtfck6kq22s"
+
+  (now)
+  ;; => "3kox43iikmkh4"
+
+  (parse "3kmtfb5wxvk2e")
+  ;; => {:timestamp 1709512113158000, :clockid 10}
+#+end_src
